@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="0255d0c6-ed2d-4b6d-81f6-5276d2393943" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="amine6-session3Flow" doc:id="cfbe5b60-2138-42a6-9b8d-ecb516eeff74" >
+		<http:listener doc:name="Listener" doc:id="86a19dca-17da-48fa-ad70-c20d3389649d" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value='#["Hello Ssi Amine"]' doc:name="Set Payload" doc:id="a0ad99de-6182-4129-b6da-7a5ae31e794b" />
+	</flow>
+	<flow name="amine6-session3Flow1" doc:id="3343e570-511c-4eb9-b2a5-e883204991fe" >
+		<http:listener doc:name="Listener" doc:id="57fa88d3-3268-4908-ba20-7c49e593c6d4" config-ref="HTTP_Listener_config" path="/sports"/>
+		<set-payload value='#["Hello Ssi amine Again"]' doc:name="Set Payload" doc:id="7fb806c6-aeff-460c-a5a3-65939878aaf5" />
+	</flow>
+</mule>
